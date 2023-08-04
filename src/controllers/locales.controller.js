@@ -13,19 +13,7 @@ export const createLocal = async (req, res) => {
     const { nombre , direccion, ciudad, redes, especialidad, descipcion, logo, imagen_tienda, url, comuna} = req.body
     try {
         const [rows] = await pool.query('INSERT INTO local(nombre , direccion, ciudad, redes, especialidad, descripcion, logo, imagen_tienda, url, comuna ) VALUES (?,?,?,?,?,?,?,?,?,?)', [nombre , direccion, ciudad, redes, especialidad, descipcion, logo, imagen_tienda, url, comuna])
-        res.send({
-            id: rows.insertId,
-            nombre,
-            direccion,
-            ciudad,
-            redes,
-            especialidad,
-            descipcion,
-            logo,
-            imagen_tienda,
-            url,
-            comuna
-        })    
+        res.status(201).json({ id: rows.insertId, ...req.body });
     } catch (error) {
         return res.status(500).json({ message: "Something goes wrong" });
     }
