@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS localesdb;
 USE localesdb;
 
 CREATE TABLE local (
-    id INT(10) AUTO_INCREMENT,
+    id INT(10) NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(45) NOT NULL,
     direccion VARCHAR(255) NOT NULL,
     ciudad VARCHAR(45) NOT NULL,
@@ -32,5 +32,6 @@ INSERT INTO local VALUES
 "descripcion" : "",
 "logo" : "https://cdn.mer-cat.com/streetfood/img/settings/whatsapp_image_20230209_at_2_1675963412nqh8pd.22.41_pm.jpeg",
 "imagen_tienda" : "https://cdn.mer-cat.com/streetfood/img/settings/whatsapp_image_20230209_at_2_1675963412nqh8pd.22.41_pm.jpeg",
-"url" : "https://www.streetfoodchile.cl/"
+"url" : "https://www.streetfoodchile.cl/",
+"comuna " : "Maipú"
 }
